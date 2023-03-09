@@ -1,0 +1,6 @@
+<div>
+    <h3>Выберите город</h3>
+    <ng-container *ngFor="let city of cities">
+        <div (click)="onClick(city)">{{ city }}</div>
+    </ng-container>
+</div>

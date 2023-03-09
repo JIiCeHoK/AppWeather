@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from './services/api.service';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.less']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
     title = 'AppWeather';
 
-    constructor(private api: ApiService) { }
+    city = ''
 
-    ngOnInit() {
-        this.api.get$().pipe().subscribe(result => console.log(result))
+    constructor() { }
+
+    changeSelctedCity(selctedCity: string) {
+        this.city = selctedCity
     }
 }
+

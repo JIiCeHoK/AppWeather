@@ -1,0 +1,7 @@
+<p>{{ currentCity }}</p>
+<ng-container *ngIf="data$ | async as data">
+    <div>
+        <p>Текущая температура: {{ data.temp.temp }}</p>
+    </div>
+    <!-- <div>{{ data.wind }}</div> -->
+</ng-container>

@@ -15,13 +15,21 @@ export class ApiService {
         'Content-Type': 'application/json',
     });
 
-    url = 'api.openweathermap.org';
+    url = 'https://api.openweathermap.org';
 
     constructor(private httpClient: HttpClient) { }
 
-    get$(): Observable<any> {
+    getCity$(city: string): Observable<any> {
         return this.httpClient.get<any>(
-            'http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=a5679c72aa6b81efbaa0a3eaa4fc7e1e'
+            this.url + '/data/2.5/weather',
+            {
+                params: {
+                    q: city,
+                    lang: 'ru',
+                    units: 'metric',
+                    appid: 'a5679c72aa6b81efbaa0a3eaa4fc7e1e',
+                }
+            }
         );
     }
 }
