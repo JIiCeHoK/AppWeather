@@ -1,6 +1,12 @@
-<div>
-    <h3>Выберите город</h3>
+<div class="container">
+    <div class="title">Выберите город</div>
     <ng-container *ngFor="let city of cities">
-        <div (click)="onClick(city)">{{ city }}</div>
+        <div
+            (click)="onClick(city)"
+            class="menuElement"
+            [class.selected]="city === currentCity"
+        >
+            {{ city }}
+        </div>
     </ng-container>
 </div>
