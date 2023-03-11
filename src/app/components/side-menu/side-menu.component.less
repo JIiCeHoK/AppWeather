@@ -1,0 +1,32 @@
+.container {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    padding-bottom: 4px;
+}
+
+.menuElement {
+    padding: 8px;
+    color: rgb(255, 145, 76);
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s;
+    &:hover {
+        color: white;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        background-color: lighten(rgb(255, 145, 76), 10%);
+    }
+}
+
+.selected {
+    color: white;
+    background-color: rgb(255, 145, 76);
+    padding-top: 16px;
+    padding-bottom: 16px;
+}

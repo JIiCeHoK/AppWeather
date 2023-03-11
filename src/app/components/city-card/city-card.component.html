@@ -1,0 +1,14 @@
+<span class="title">{{ currentCity }}</span>
+<ng-container [ngSwitch]="data$ | async">
+    <div *ngSwitchCase="null" class="loader"></div>
+    <ng-container *ngIf="data$ | async as data">
+        <div class="content">
+            <p>
+                Текущая температура: <span>{{ data.temp.temp }}</span>
+            </p>
+            <p>
+                Скорость ветра:<span>{{ data.wind.speed }}</span>
+            </p>
+        </div>
+    </ng-container>
+</ng-container>
