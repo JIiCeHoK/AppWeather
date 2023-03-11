@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ICityWeatherDTO, ITemperature, IWind } from '../../../interfaces/city-weather.dto';
@@ -14,15 +14,11 @@ interface ICityWeather {
     templateUrl: './city-card.component.html',
     styleUrls: ['./city-card.component.less']
 })
-export class CityCardComponent implements OnInit, OnChanges {
+export class CityCardComponent implements  OnChanges {
     @Input() currentCity: string = '';
     data$: Observable<ICityWeather> = null;
 
     constructor(private api: ApiService) {
-    }
-
-    ngOnInit(): void {
-
     }
 
     ngOnChanges(changes: SimpleChanges): void {
@@ -33,13 +29,8 @@ export class CityCardComponent implements OnInit, OnChanges {
                         temp: city.main,
                         wind: city.wind,
                     }
-                    console.log(result);
                     return result;
                 }))
         }
     }
-
-
-
-
 }

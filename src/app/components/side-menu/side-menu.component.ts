@@ -16,7 +16,7 @@ export class SideMenuComponent implements OnInit {
     @Output() selectedCity = new EventEmitter<string>();
 
     cities = mockData;
-    currentCity = mockData[0];
+    currentCity = this.cities[0];
 
     constructor() {
     }
